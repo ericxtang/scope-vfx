@@ -18,7 +18,7 @@ More effects coming soon.
 In Scope, open **Settings > Plugins** and enter:
 
 ```
-git+https://github.com/user/scope-vfx.git
+git+https://github.com/viborc/scope-vfx.git
 ```
 
 Or install from a local directory during development:
@@ -41,6 +41,14 @@ Or install from a local directory during development:
 3. Add its parameters to `schema.py`
 4. Wire it into the effect chain in `pipeline.py`
 5. Re-export from `effects/__init__.py`
+
+## Changelog
+
+### 0.1.1
+- Registered as a post-processor instead of a main pipeline — VFX Pack now chains after any generative model (LongLive, StreamDiffusion, etc.) to apply effects to AI-generated video output
+
+### 0.1.0
+- Initial release with chromatic aberration and VHS/retro CRT effects
 
 ## Requirements
 

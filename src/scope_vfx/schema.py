@@ -1,6 +1,6 @@
 from pydantic import Field
 
-from scope.core.pipelines.base_schema import BasePipelineConfig, ModeDefaults, ui_field_config
+from scope.core.pipelines.base_schema import BasePipelineConfig, ModeDefaults, UsageType, ui_field_config
 
 
 class VFXConfig(BasePipelineConfig):
@@ -12,6 +12,7 @@ class VFXConfig(BasePipelineConfig):
 
     supports_prompts = False
 
+    usage = [UsageType.POSTPROCESSOR]
     modes = {"video": ModeDefaults(default=True)}
 
     # --- Chromatic Aberration ---

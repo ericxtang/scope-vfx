@@ -1,6 +1,6 @@
 [project]
 name = "scope-vfx"
-version = "0.1.0"
+version = "0.1.1"
 description = "GPU-accelerated visual effects pack for Daydream Scope"
 requires-python = ">=3.12"
 license = "MIT"
