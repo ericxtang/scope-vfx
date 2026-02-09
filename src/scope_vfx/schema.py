@@ -78,3 +78,43 @@ class VFXConfig(BasePipelineConfig):
         description="Horizontal tracking distortion (wavy displacement)",
         json_schema_extra=ui_field_config(order=14, label="Tracking"),
     )
+
+    # --- Warhol Pop-Art ---
+
+    warhol_enabled: bool = Field(
+        default=False,
+        description="Enable Warhol screen-print effect (ink edges, flat palette colours)",
+        json_schema_extra=ui_field_config(order=20, label="Warhol Pop-Art"),
+    )
+
+    warhol_palette: int = Field(
+        default=0,
+        ge=0,
+        le=5,
+        description="Colour palette (0 Marilyn, 1 Electric, 2 Banana, 3 Campbell's, 4 Mao, 5 Flowers)",
+        json_schema_extra=ui_field_config(order=21, label="Palette"),
+    )
+
+    warhol_posterize: int = Field(
+        default=4,
+        ge=2,
+        le=8,
+        description="Number of flat colour bands (fewer = bolder screen-print look)",
+        json_schema_extra=ui_field_config(order=22, label="Color Levels"),
+    )
+
+    warhol_ink: float = Field(
+        default=0.7,
+        ge=0.0,
+        le=1.0,
+        description="Ink-edge overlay strength (0 = no outlines, 1 = solid black)",
+        json_schema_extra=ui_field_config(order=23, label="Ink Strength"),
+    )
+
+    warhol_edge_thresh: float = Field(
+        default=0.15,
+        ge=0.0,
+        le=1.0,
+        description="Edge detection threshold (higher = fewer, bolder edges)",
+        json_schema_extra=ui_field_config(order=24, label="Edge Threshold"),
+    )

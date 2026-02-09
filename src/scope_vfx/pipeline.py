@@ -4,7 +4,7 @@ import torch
 
 from scope.core.pipelines.interface import Pipeline, Requirements
 
-from .effects import chromatic_aberration, vhs_retro
+from .effects import chromatic_aberration, vhs_retro, warhol
 from .schema import VFXConfig
 
 if TYPE_CHECKING:
@@ -67,6 +67,15 @@ class VFXPipeline(Pipeline):
                 scan_line_count=kwargs.get("scan_line_count", 100),
                 noise=kwargs.get("vhs_noise", 0.1),
                 tracking=kwargs.get("tracking_distortion", 0.2),
+            )
+
+        if kwargs.get("warhol_enabled", False):
+            frames = warhol(
+                frames,
+                palette=kwargs.get("warhol_palette", 0),
+                posterize=kwargs.get("warhol_posterize", 4),
+                ink=kwargs.get("warhol_ink", 0.7),
+                edge_thresh=kwargs.get("warhol_edge_thresh", 0.15),
             )
 
         return {"video": frames.clamp(0, 1)}
