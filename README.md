@@ -10,6 +10,8 @@ Applies real-time video effects to any camera or video input — chromatic aberr
 |--------|-------------|
 | **Chromatic Aberration** | Displaces RGB channels in opposite directions for a cinematic / glitch look |
 | **VHS / Retro CRT** | Scan lines, analog noise, and tracking distortion for a nostalgic analog feel |
+| **Warhol Pop Art** | Saturated colors, high contrast, pop art style |
+
 
 More effects coming soon.
 
